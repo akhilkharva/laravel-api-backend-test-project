@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "628e37b5-4642-4566-9df8-fed43b7a99af",
+		"name": "DigitalApTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23633539"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Post : List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}posts",
+							"host": [
+								"{{URL}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post : Single",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}posts/2",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post : Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "nnnnn",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": ",,,,,,",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}posts/store/new",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"store",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post : Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": ",,,,,,",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}posts/update/1",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post : Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "nnn",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": ",,,,,,",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}posts/1",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secr@te",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}login",
+					"host": [
+						"{{URL}}login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://akhil-digitalaptech-test.test/api/v1/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmMyNTE1ZGUyZjRjNTA0YmI5NDlhNDI3ZGZmYTU0MGNmN2FlOTY2NDk3NjQwY2VlNDA2ZmRhNDJmM2FhMzU5MzhmY2I4MDE4NWM0NjEwZjEiLCJpYXQiOjE3MDU0NDA4OTQuNzg0MDkyLCJuYmYiOjE3MDU0NDA4OTQuNzg0MDk1LCJleHAiOjE3MjExNjU2OTQuNjk0NjQsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f--fBhtahexPKWHLtjzTPnyL9rqI3HZy6_cPpOy33Y7LIXtE4zr1Agm6omGK8cXO9OEQjEmfqFlns_VkM-gXRhw_PZ8BkrS6FJuV-BZ2j7_30uMNS57tHfDGiMj9Xh9Yuk09CP1MM4dKj54IB3MQvyIjtqDO1HupJ5zmH299qNzTjhn5UmRZ4AJkzMpJ-hQmrhpEOCTH-4y_9nnXL8LTeSLMtdwZcxPj13UIHFpBv0e9xtW00CspZWLfPTzWYBxY68D4ivAtfo-q_4Or0q7-RpFPAtzPZGovAIrWd-Ny2sLurzezWBDvIq6joXfH6YpGn5LIL3fIhg770TGELxi5yVJVH54vldClX3Tokffnux6663azp3wOY_gZJ6bGL88gf6hOQevRpNN0jIv2RVuUi3MfDEakZaZSuKguxohow-3RY_Xp-HZLvXLEVwqKrFWUyUjz3dlmo6Af8QdsbAAk6qbJo8mS8YbezGt5cVy13I2LOeGhVWgDtCNmzhpepfZZHdJNqT1EON98FBXCmbJzx1xz3hMUciwN8_FwuadOMYeWZqNe9RxIuLaTBhqyjtvjv1_GSo1-qla37xOChMukY53US4XNGQ-nlH78FOYD08Lxzhc0r_IK1PgdqVmFrdOyuAkC1aGVdSIC-tY1PUzg254axF2xC9yIm9ST7gawvY8",
+			"type": "string"
+		}
+	]
+}

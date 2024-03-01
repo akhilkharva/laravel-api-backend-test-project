@@ -1,0 +1,139 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/login:
+    post:
+      summary: Login.
+      operationId: login
+      description: 'This endpoint lets user to log in.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: hello@testapp.org
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: XXXXXX
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/posts:
+    get:
+      summary: 'List all posts / get single post.'
+      operationId: listAllPostsGetSinglePost
+      description: 'This endpoint returns the list of all posts.'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Posts
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The id of the user.'
+        example: '2'
+        required: true
+        schema:
+          type: string
+  '/api/v1/posts/{id}':
+    get:
+      summary: 'List all posts / get single post.'
+      operationId: listAllPostsGetSinglePost
+      description: 'This endpoint returns the list of all posts.'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Posts
+    delete:
+      summary: 'Delete My Post.'
+      operationId: deleteMyPost
+      description: 'This end point lets a user delete post.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Posts
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The id of the user.'
+        example: '2'
+        required: true
+        schema:
+          type: string
+  /api/v1/posts/store/new:
+    post:
+      summary: 'Crate new post.'
+      operationId: crateNewPost
+      description: 'This endpoint allows user to create new posts.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Posts
+  '/api/v1/posts/update/{id}':
+    post:
+      summary: 'Crate new post.'
+      operationId: crateNewPost
+      description: 'This endpoint allows user to create new posts.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Posts
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: ea
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Auth
+    description: "\nAPIs for authenticating user"
+  -
+    name: Posts
+    description: "\nAPIs for Post"

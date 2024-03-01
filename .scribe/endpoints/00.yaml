@@ -1,0 +1,57 @@
+name: Auth
+description: |-
+
+  APIs for authenticating user
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: Auth
+      groupDescription: |-
+
+        APIs for authenticating user
+      subgroup: ''
+      subgroupDescription: ''
+      title: Login.
+      description: 'This endpoint lets user to log in.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'The email of the user.'
+        required: true
+        example: hello@testapp.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: 'The password of the user.'
+        required: true
+        example: XXXXXX
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      email: hello@testapp.org
+      password: XXXXXX
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
